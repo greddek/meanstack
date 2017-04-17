@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Appka</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+	<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            {{#if user}}
+              <li role="presentation"><a href="/">Strona Główna</a></li>
+              <li role="presentation"><a href="/users/logout">Wyloguj</a></li>
+            {{else}}
+              <li role="presentation"><a href="/users/login">Zaloguj</a></li>
+              <li role="presentation"><a href="/users/rejestr">Zarejestruj</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        <h3 class="text-muted">Appka</h3>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}<!-- @sprawdzenie ogolne (app.js 68) zmienne globalne-->
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+
+          {{{body}}}
+        </div>
+
+
+      </div>
+
+      <footer class="footer">
+        <p align="left">&copy; 2017 LJ z ABiDBII, Inc.</p>
+      </footer>
+
+    </div> <!-- @koniec_kontenera!!!! -->
+</body>
+</html>

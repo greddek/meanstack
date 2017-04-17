@@ -1,0 +1,29 @@
+<h2 class="page-header">Rejestracja</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/users/rejestr">
+   <div class="form-group">
+    <label>Imie</label>
+    <input type="text" class="form-control" placeholder="Imie" name="name">
+  </div>
+  <div class="form-group">
+    <label>Nazwa użytkownika</label>
+    <input type="text" class="form-control" placeholder="Nazwa użytkownika" name="username">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Hasło</label>
+    <input type="password" class="form-control" placeholder="Hasło" name="password">
+  </div>
+  <div class="form-group">
+    <label>Powtórz Hasło</label>
+    <input type="password" class="form-control" placeholder="Hasło" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Potwierdz</button>
+</form>
