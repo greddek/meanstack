@@ -1,6 +1,12 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');//for example "simple using of compare passowrd"
 
+mongoose.connect('mongodb://wrona:lukes123@ds135029.mlab.com:35029/webloginlj', function(err) {
+    if (err) console.log(err);
+    else console.log("Poczona z serwerem bazy danych!");
+});
+var db = mongoose.connection;
+
 // creating new user that will be using schema type of base
 var UserSchema = mongoose.Schema({
 	username: {
@@ -16,7 +22,7 @@ var UserSchema = mongoose.Schema({
 	name: {
 		type: String
 	}
-});
+},{collection:'users'});
 //export users from base
 var User = module.exports = mongoose.model('User', UserSchema);
 //creating user and hashing his password
